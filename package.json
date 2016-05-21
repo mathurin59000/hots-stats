@@ -1,0 +1,28 @@
+{
+  "name": "hots-stats",
+  "version": "1.0.0",
+  "description": "a module to retrieve informations about Heroes of the Storm like all heroes ()\u001b[Dgames played, games banned, popularity, % victory) and builds list of each hero.",
+  "main": "index.js",
+  "test": "test.js",
+  "repository": {
+    "type": "git",
+    "url": "\u001b[2~https://github.com/mathurin59000/hots-stats.git"
+  },
+  "keywords": [
+    "hots",
+    "heroes of the storm",
+    "heroes",
+    "hots-stats",
+    "hots-api"
+  ],
+  "author": {
+    "name": "mathurin59000",
+    "email": "mathurin.ramart@isen-lille.fr",
+    "url": "http://mathurinramart.fr"
+  },
+  "homepage": "https://github.com/mathurin59000/hots-stats#readme",
+  "dependencies": {
+    "request": "^2.65.0"
+  },
+  "license": "ISC"
+}
