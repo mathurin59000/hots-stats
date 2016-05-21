@@ -1,7 +1,7 @@
 {
   "name": "hots-stats",
   "version": "1.0.0",
-  "description": "a module to retrieve informations about Heroes of the Storm like all heroes ()\u001b[Dgames played, games banned, popularity, % victory) and builds list of each hero.",
+  "description": "a module to retrieve informations about Heroes of the Storm like all heroes (games played, games banned, popularity, % victory) and builds list of each hero.",
   "main": "index.js",
   "test": "test.js",
   "repository": {
