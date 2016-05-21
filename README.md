@@ -22,7 +22,7 @@ hots.getHeroes(function(err, data) {
 ```
 
 **Output:**
-```json
+```
 [ { img: 'http://d1i1jxrdh2kvwy.cloudfront.net/Images/Heroes/Portraits/TheLostVikings.png',
     name: 'The Lost Vikings',
     games_played: '4286',
