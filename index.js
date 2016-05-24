@@ -117,6 +117,61 @@ exports.getHeroes = function(callback) {
     });
 };
 
+exports.getMaps = function(callback){
+    if (typeof callback !== 'function') {
+        throw new Error('No callback supplied');
+    }
+
+    var maps = [];
+
+    request({
+        uri: '/Default',
+        baseUrl: 'http://www.hotslogs.com/',
+    }, function(err, response, body) {
+        if (!err && response.statusCode === 200) {
+
+            //Init
+            var tab = response.body.split('<table class="rgMasterTable"');
+            var tab2 = tab[2].split('<tbody>');
+            var tab3 = tab2[1].split('</tbody');
+            var allMaps = tab3[0].split('<tr ');
+            for(var i = 1; i<allMaps.length; i++){
+
+                var item = {
+                    name: "",
+                    img: "",
+                    games_played: "",
+                    average_time: ""
+                };
+
+                //Name
+                var tab_prep_name = allMaps[i].split('<a title="');
+                var tab_test_name = tab_prep_name[1].split('"');
+                item.name = tab_test_name[0];
+
+                //Image
+                var tab_prep_img = allMaps[i].split('//');
+                var tab_test_img = tab_prep_img[1].split('" ');
+                item.img = "http://"+tab_test_img[0];
+
+                //Average time && Games played
+                var tab_prep = allMaps[i].split('</td>');
+                var tab_test_games_played = tab_prep[3].split('<td>');
+                item.games_played = tab_test_games_played[1];
+                var tab_test_average_time = tab_prep[4].split('<td>');
+                item.average_time = tab_test_average_time[1];
+
+                maps.push(item);
+            }
+            //console.log(maps);
+            callback(null, maps);
+        }
+        else{
+            callback(err);
+        }
+    });
+};
+
 
 /**
  * Retrieve builds for a hero.

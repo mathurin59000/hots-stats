@@ -45,6 +45,33 @@ hots.getHeroes(function(err, data) {
   ... ]
 ```
 
+### Get all maps data
+**Input:**
+```js
+var hots = require('hots-stats');
+
+hots.getMaps(function(err, maps) {
+    if(!err) {
+        console.log(maps);
+    }
+});
+```
+
+**Output:**
+```
+[ { name: 'Battlefield of Eternity',
+    img: 'http://d1i1jxrdh2kvwy.cloudfront.net/Images/Maps/BattlefieldofEternity.png',
+    games_played: '15558',
+    average_time: '00:20:13' },
+  { name: 'Blackheart&#39;s Bay',
+    img: 'http://d1i1jxrdh2kvwy.cloudfront.net/Images/Maps/BlackheartsBay.png',
+    games_played: '15249',
+    average_time: '00:21:10' },
+  { ... },
+  ... ]
+```
+
+
 ### Get single hero data
 **Input:**
 ```js
@@ -56,7 +83,7 @@ hots.getBuildsHero("Greymane", function(data) {
 
 hots.getHeroes(function(err, data){
 	hots.getBuildsHero(heroes[4].name, function(data){
-		conso.log(data)
+		console.log(data)
 	});
 });
 ```
